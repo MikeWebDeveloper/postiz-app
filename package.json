@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:backend && npm run build:frontend",
+    "build": "npm run build:libs && npm run build:backend && npm run build:frontend",
+    "build:libs": "cd libraries/nestjs-libraries && npm install",
     "build:backend": "cd apps/backend && npm install && npx nx build backend --prod",
     "build:frontend": "cd apps/frontend && npm install && npx nx build frontend --prod",
     "update-plugins": "node build.plugins.js",
@@ -17,6 +18,15 @@
     "@nx/next": "19.7.2",
     "@nx/react": "19.7.2",
     "@nx/workspace": "19.7.2",
-    "nx": "19.7.2"
+    "nx": "19.7.2",
+    "@nestjs/common": "^10.0.2",
+    "@nestjs/core": "^10.0.2",
+    "@nestjs/platform-express": "^10.0.2",
+    "@prisma/client": "^5.22.0",
+    "prisma": "^5.22.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
   }
 }
