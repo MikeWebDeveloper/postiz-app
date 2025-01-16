@@ -2,6 +2,6 @@
   "name": "@postiz/frontend",
   "version": "1.0.0",
   "dependencies": {
-    "@postiz/backend": "workspace:*"
+    "@postiz/backend": "file:../backend"
   }
 } 

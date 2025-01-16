@@ -2,12 +2,12 @@
   "name": "postiz",
   "version": "0.0.0",
   "license": "MIT",
-  "workspaces": [
-    "apps/*",
-    "libraries/*"
-  ],
   "scripts": {
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd apps/backend && npm install && npx nx build backend --prod",
+    "build:frontend": "cd apps/frontend && npm install && npx nx build frontend --prod",
     "update-plugins": "node build.plugins.js",
-    "prisma-generate": "cd ./libraries/nestjs-libraries/src/database/prisma && npx prisma generate"
+    "prisma-generate": "cd ./libraries/nestjs-libraries/src/database/prisma && npx prisma generate",
+    "postinstall": "npm run update-plugins && npm run prisma-generate"
   }
 }
