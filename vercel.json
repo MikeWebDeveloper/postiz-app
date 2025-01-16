@@ -1,7 +1,13 @@
 {
-  "buildCommand": "npx nx build frontend --prod",
+  "buildCommand": "npx nx build frontend --prod && npx nx build backend --prod",
   "outputDirectory": "dist/apps/frontend/.next",
   "framework": "nextjs",
   "installCommand": "npm install",
-  "devCommand": "npx nx serve frontend"
+  "devCommand": "npx nx serve frontend",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/[...path]"
+    }
+  ]
 } 

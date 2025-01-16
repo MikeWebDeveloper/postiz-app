@@ -1,0 +1,11 @@
+{
+  "name": "@postiz/backend",
+  "version": "1.0.0",
+  "main": "dist/apps/backend/main.serverless.js",
+  "exports": {
+    ".": {
+      "import": "./dist/apps/backend/main.serverless.js",
+      "require": "./dist/apps/backend/main.serverless.js"
+    }
+  }
+} 
