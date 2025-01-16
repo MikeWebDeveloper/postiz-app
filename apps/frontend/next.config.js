@@ -12,46 +12,11 @@ const nextConfig = {
     // See: https://github.com/gregberge/vgr
     svgr: false,
   },
-  transpilePackages: ['crypto-hash'],
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
-  },
   output: 'standalone',
-  distDir: '.next',
-  async redirects() {
-    return [
-      {
-        source: '/api/uploads/:path*',
-        destination:
-          process.env.STORAGE_PROVIDER === 'local' ? '/uploads/:path*' : '/404',
-        permanent: true,
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/uploads/:path*',
-        destination:
-          process.env.STORAGE_PROVIDER === 'local'
-            ? '/api/uploads/:path*'
-            : '/404',
-      },
-    ];
-  },
+  distDir: '.next'
 };
 
 const plugins = [
-  // Add more Next.js plugins to this list if needed.
   withNx,
 ];
 
