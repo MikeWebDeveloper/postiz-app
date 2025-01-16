@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npx nx build frontend --prod",
+  "outputDirectory": "dist/apps/frontend/.next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "devCommand": "npx nx serve frontend"
+} 

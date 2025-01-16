@@ -25,6 +25,8 @@ const nextConfig = {
       },
     ],
   },
+  output: 'standalone',
+  distDir: '.next',
   async redirects() {
     return [
       {
