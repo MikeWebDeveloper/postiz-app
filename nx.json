@@ -1,6 +1,10 @@
 {
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "postiz",
+  "affected": {
+    "defaultBase": "main"
+  },
   "targetDefaults": {
     "build": {
       "cache": true,
@@ -60,5 +64,9 @@
         "linter": "eslint"
       }
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libraries"
   }
 }
